@@ -29,10 +29,10 @@ Follow these steps to integrate this library into your Xcode project:
 
 ## 🚀 Quick Start (Recommended: AnyEndpoint)
 
-`EndPoint` is the easiest way to create requests without creating custom enums or structs.
+`AnyEndpoint` is the easiest way to create requests without creating custom enums or structs.
 
 ```swift
-let endpoint = EndPoint(
+let endpoint = AnyEndpoint(
     baseUrl: URL(string: "https://jsonplaceholder.typicode.com")!,
     path: "/users"
 )
@@ -45,7 +45,7 @@ let users: [User] = try await endpoint.run()
 ```swift
 let newUser = User(name: "Breno")
 
-let endpoint = EndPoint(
+let endpoint = AnyEndpoint(
     baseUrl: URL(string: "https://jsonplaceholder.typicode.com")!,
     path: "/users",
     method: .post,
@@ -76,7 +76,7 @@ let data = try await endpoint.run()
 ## 🔐 Authentication
 
 ```swift
-let endpoint = EndPoint(
+let endpoint = AnyEndpoint(
     baseUrl: baseURL,
     path: "/users",
     headers: ["Authorization": "Bearer token"]
