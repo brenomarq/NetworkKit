@@ -9,7 +9,7 @@ public protocol NetworkEndpoint {
 }
 
 // MARK: Default Values
-extension NetworkEndpoint {
+public extension NetworkEndpoint {
     var body: Encodable? { nil }
     var headers: [String: String] { [:] }
 }
