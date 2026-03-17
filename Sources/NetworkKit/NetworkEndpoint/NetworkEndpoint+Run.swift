@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  NetworkEndpoint+Run.swift
 //  NetworkKit
 //
 //  Created by Breno Marques on 17/03/26.
@@ -48,6 +48,8 @@ public extension NetworkEndpoint {
         if let body = body { request.httpBody = try JSONEncoder().encode(body) }
         
         headers.forEach { request.setValue($0.value, forHTTPHeaderField: $0.key) }
+        
+        applyAuth(to: &request)
         
         return request
     }
