@@ -37,7 +37,7 @@ public struct AnyEndpoint: NetworkEndpoint {
     ///   - body: An optional encodable body. Defaults to `nil`.
     ///   - headers: Additional HTTP headers. Defaults to an empty dictionary.
     ///   - auth: The authentication strategy. Defaults to `.none`.
-    init(
+    public init(
         baseUrl: URL,
         path: String,
         method: HTTPMethod = .get,
